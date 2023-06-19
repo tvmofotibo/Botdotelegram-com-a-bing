@@ -1,5 +1,17 @@
 # gpt bot telegram
 
+#Código feito por Alvino Gabriel Santana Santos 
+
+#Instagram:https://instagram.com/alvino_gabriel_santana?igshid=ZDc4ODBmNjlmNQ==
+
+#AGRADECIMENTOS:
+
+#OBRIGADO REPLIT.COM POR FORNECER O SERVIDOR 
+
+#OBRIGADO LIRA POR ENSINAR A MEXER NA API DO TELEGRAM 
+
+#OBRIGADO RAPIDAPI.COM POR FORNECER A API DA BING AI
+
 #importação
 import requests
 import telebot
@@ -9,8 +21,8 @@ import os
 outputai=""
 inputuser=""
 #chave da api do telegram
-api_chave_bot=os.environ.get("API_KEY_BOT")
-api_chave_bing=os.environ.get("API_KEY_BING")
+api_chave_bot=os.environ['API_KEY_BOT']
+api_chave_bing=os.environ['API_KEY_BING']
 #Função para fazer a requisição para uma api da Bing AI gpt4
 def aigetapi():
 	global inputuser
@@ -53,12 +65,19 @@ def funveri(mensagem):
 @bot.message_handler(commands=["opensource"])
 def opensource(mensagem):
 	bot.send_message(mensagem.chat.id,"codigo feito por Alvino Gabriel")
-	bot.send_message(mensagem.chat.id,"depois coloco o link para o GitHub, flw")
+	time.sleep(0.3)
+	bot.send_message(mensagem.chat.id,"codigo no GitHub: ")
+	bot.send_message(mensagem.chat.id,"https://github.com/tvmofotibo/Botdotelegram-com-a-bing")
 	time.sleep(0.3)
 	bot.send_message(mensagem.chat.id,"meu instagram: ")
 	time.sleep(0.3)
 	bot.send_message(mensagem.chat.id,"https://instagram.com/alvino_gabriel_santana?igshid=ZDc4ODBmNjlmNQ==")
-
+	time.sleep(0.3)
+	bot.send_message(mensagem.chat.id,"OBRIGADO REPLIT.COM POR FORNECER O SERVIDOR")
+	time.sleep(0.5)
+	bot.send_message(mensagem.chat.id,"OBRIGADO rapidapi.com POR FORNECER A API DA BING")
+	time.sleep(0.3)
+	bot.send_message(mensagem.chat.id,"OBRIGADO Lira POR EXPLICAR COMO USAR A API DO TELEGRAM: https://youtu.be/_RQw5Nw7Op0")
 @bot.message_handler(commands=["start"])
 def start(mensagem):
     nome1=" "
