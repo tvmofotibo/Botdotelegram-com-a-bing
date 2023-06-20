@@ -18,8 +18,10 @@ import telebot
 import time
 import os
 #Declaração das variáveis 
+time.sleep(5)
 outputai=""
 inputuser=""
+
 #chave da api do telegram
 api_chave_bot=os.environ['API_KEY_BOT']
 api_chave_bing=os.environ['API_KEY_BING']
@@ -28,7 +30,7 @@ def aigetapi():
 	global inputuser
 	url = "https://chatgpt-bing-ai-chat-api.p.rapidapi.com/ask"
 	payload = {
-	"question": inputuser,"bing_u_cookie": "Please replace this string with a string representing your Bing _U cookie. You can obtain your _U cookie by accessing the Developer Console and searching for the _U cookie name. Please follow this link for guidance: https://i.ibb.co/94YWpQD/1676391128.png"
+	"question": inputuser,"bing_u_cookie": os.environ['C']
 	}
 	headers = {
 	"content-type": "application/json",
@@ -64,20 +66,13 @@ def funveri(mensagem):
 
 @bot.message_handler(commands=["opensource"])
 def opensource(mensagem):
-	bot.send_message(mensagem.chat.id,"codigo feito por Alvino Gabriel")
-	time.sleep(0.3)
-	bot.send_message(mensagem.chat.id,"codigo no GitHub: ")
-	bot.send_message(mensagem.chat.id,"https://github.com/tvmofotibo/Botdotelegram-com-a-bing")
-	time.sleep(0.3)
 	bot.send_message(mensagem.chat.id,"meu instagram: ")
 	time.sleep(0.3)
 	bot.send_message(mensagem.chat.id,"https://instagram.com/alvino_gabriel_santana?igshid=ZDc4ODBmNjlmNQ==")
-	time.sleep(0.3)
-	bot.send_message(mensagem.chat.id,"OBRIGADO REPLIT.COM POR FORNECER O SERVIDOR")
-	time.sleep(0.5)
-	bot.send_message(mensagem.chat.id,"OBRIGADO rapidapi.com POR FORNECER A API DA BING")
-	time.sleep(0.3)
-	bot.send_message(mensagem.chat.id,"OBRIGADO Lira POR EXPLICAR COMO USAR A API DO TELEGRAM: https://youtu.be/_RQw5Nw7Op0")
+	bot.send_message(mensagem.chat.id,"codigo feito por Alvino Gabriel")
+	time.sleep(1)
+	time.sleep(1)
+	bot.send_message(mensagem.chat.id,"CÓDIGO NO GITHUB:\n https://github.com/tvmofotibo/Botdotelegram-com-a-bing \n \n AGRADECIMENTOS: \n OBRIGADO REPLIT.COM POR FORNECER O SERVIDOR \n OBRIGADO rapidapi.com POR FORNECER A API DA BING \n OBRIGADO Lira POR EXPLICAR COMO USAR A API DO TELEGRAM: https://youtu.be/_RQw5Nw7Op0")
 @bot.message_handler(commands=["start"])
 def start(mensagem):
     nome1=" "
@@ -94,7 +89,7 @@ def start(mensagem):
     	nome1="Olá "+str(mensagem.from_user.first_name)+" "
     bot.send_message(mensagem.chat.id, "%s%sEu sou sr bunda cagada, o Rick colocou em min a Bing AI para eu ficar mais inteligente."%(nome1,nome2))
     bot.send_message(mensagem.chat.id,"faça-me qual quer pergunta")
-    
+    bot.send_message(mensagem.chat.id,"INSTAGRAM DO MEU CRIADOR: \n https://instagram.com/alvino_gabriel_santana?igshid=ZDc4ODBmNjlmNQ==")
 @bot.message_handler(func=funveri)
 def respon(mensagem):
    
