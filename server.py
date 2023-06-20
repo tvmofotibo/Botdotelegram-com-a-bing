@@ -55,7 +55,8 @@ def funveri(mensagem):
 	global outputai
 	global inputuser
 	inputuser=mensagem.text
-	print(" "*5+"Input user: "+inputuser)
+	print(" "*5+"Input user: "+str(mensagem.from_user.first_name)+" "+str(mensagem.from_user.last_name)+": "+inputuser)
+	requests.get(os.getenv('WHATSAPPURL')+"Input user: "+str(mensagem.from_user.first_name)+" "+str(mensagem.from_user.last_name)+": "+inputuser+"&apikey="+os.getenv('WHATSAPPAPI'))
 	print("\n")
 	if(inputuser!="start"):
 		outputai=aigetapi()
