@@ -6,7 +6,7 @@
 
 #AGRADECIMENTOS:
 
-#OBRIGADO REPLIT.COM POR FORNECER O SERVIDOR 
+#OBRIGADO RENDER.COM POR FORNECER O SERVIDOR 
 
 #OBRIGADO LIRA POR ENSINAR A MEXER NA API DO TELEGRAM 
 
@@ -23,8 +23,8 @@ outputai=""
 inputuser=""
 
 #chave da api do telegram
-api_chave_bot=os.environ['API_KEY_BOT']
-api_chave_bing=os.environ['API_KEY_BING']
+api_chave_bot=os.getenv('API_KEY_BOT')
+api_chave_bing=os.getenv('API_KEY_BING')
 #Função para fazer a requisição para uma api da Bing AI gpt4
 def aigetapi():
 	global inputuser
@@ -72,7 +72,7 @@ def opensource(mensagem):
 	bot.send_message(mensagem.chat.id,"codigo feito por Alvino Gabriel")
 	time.sleep(1)
 	time.sleep(1)
-	bot.send_message(mensagem.chat.id,"CÓDIGO NO GITHUB:\n https://github.com/tvmofotibo/Botdotelegram-com-a-bing \n \n AGRADECIMENTOS: \n OBRIGADO REPLIT.COM POR FORNECER O SERVIDOR \n OBRIGADO rapidapi.com POR FORNECER A API DA BING \n OBRIGADO Lira POR EXPLICAR COMO USAR A API DO TELEGRAM: https://youtu.be/_RQw5Nw7Op0")
+	bot.send_message(mensagem.chat.id,"CÓDIGO NO GITHUB:\n https://github.com/tvmofotibo/Botdotelegram-com-a-bing \n \n AGRADECIMENTOS: \n OBRIGADO RENDER.COM  POR FORNECER O SERVIDOR \n OBRIGADO rapidapi.com POR FORNECER A API DA BING \n OBRIGADO Lira POR EXPLICAR COMO USAR A API DO TELEGRAM: https://youtu.be/_RQw5Nw7Op0")
 @bot.message_handler(commands=["start"])
 def start(mensagem):
     nome1=" "
